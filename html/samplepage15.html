@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 15</title>
+</head>
+<body>
+    <h1>Test Page 15: Arrow Functions</h1>
+    <script>
+        /*
+         Arrow Functions
+        -----------------
+        
+        Una funcion expresada se genera al asignar una funcion anonima a una variable
+
+        Una funcion declarada es la que se crea SIN asignar a una variable
+        */
+
+        // Funcion expresada
+        const saludar = function() {
+            console.log("Hola expresado");
+        }
+        saludar();
+
+        // Funcion declarada
+        function saludo() {
+            console.log("Hola declarado");
+        }
+
+        // Arrow function
+        // Sin parametros
+        const teSaludo1 = () => console.log("Hola arrow-function");
+        teSaludo1();
+
+        /*
+        Con parametros: cuando la funcion recibe un solo parametro se pueden omitir los parentesis; cuando no recibe parametros o cuando recibe mas de un parametro si hay que escribir los parentesis
+        */
+       // Con un parametro
+        const teSaludo2 = nombre => console.log(`Te saludo ${nombre}`);
+        teSaludo2("Carol Danvers");
+
+        // Con dos parametros
+        const sumar = (a, b) => a + b;
+        console.log(sumar(9, 9));
+
+        const funcionMultilinea = () =>{
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+        funcionMultilinea();
+
+        const valores = [1, 2, 3, 4, 5];
+        valores.forEach((elem, index) => console.log(`Valor ${elem} esta en la posicion ${index}.`));
+
+        const perro = {
+            nombre: "Krypto",
+            ladrar() {
+                console.log(this)
+            }
+        }
+        console.log(perro);
+        perro.ladrar();
+    </script>
+</body>
+</html>

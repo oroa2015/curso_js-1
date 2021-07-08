@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 18</title>
+</head>
+<body>
+    <h1>Test Page 18: Clases</h1>
+    <script>
+        /*
+         Clases
+        
+        */
+        
+        // Funcion Constructora
+        class Animal {
+            /*
+            El constructor de una clase es un metodo especial que se ejecuta en el momento de instanciar la clase
+            */
+            constructor(nombre, genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            // Metodos
+            sonar() {
+                console.log("Hago sonidos porque estoy vivo");
+            }
+
+            saludar() {
+                console.log(`Hola, me llamo ${this.nombre}`);
+            }
+        }
+
+        class Perro extends Animal {
+            constructor(nombre, genero, tamanio) {
+                // El metodo super() manda llamar el constructor de la clase Padre
+                super(nombre, genero); // Aqui solamente se le pasan los parametros del padre
+                this.tamanio = tamanio;
+            }
+
+            sonar() {
+                console.log("Soy un perro y puedo ladrar.");
+            }
+            ladrar() {
+                console.log("Guauu, guauu!!..");
+            }
+        }
+
+        const mimi = new Animal("Mimi", "Hembra"), scooby = new Perro("Scooby", "Macho", "Gigante");
+        
+        mimi.saludar();
+        mimi.sonar();
+
+        scooby.saludar();
+        scooby.sonar();
+        scooby.ladrar();
+
+        console.log(mimi);
+        console.log(scooby);
+    </script>
+</body>
+</html>

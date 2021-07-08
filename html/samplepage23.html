@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 23</title>
+</head>
+<body>
+    <h1>Test Page 23: Operador Cortocircuito</h1>
+    <script>
+        /*
+         Operador Cortocircuito
+        
+         Funciona usando dos condiciones usando los operadores logicos || o &&
+
+         Cortocircuito OR: cuando el valor de la izquierda en la expresion siempre pueda validar a 'true', es el valor que se cargara por defecto.
+        */
+        function saludar(nombre) {
+            nombre = nombre || 'Desconocido'; // esto es un cortocircuito
+            console.log(`Hola ${nombre}`);
+        }
+        saludar('Stephen');
+        saludar();
+
+        console.log('cadena' || 'Segundo valor');
+        console.log(19 || 'Segundo valor');
+        console.log(true || 'Segundo valor');
+        console.log(false || 'Segundo valor');
+        console.log(null || 'Segundo valor');
+        console.log(undefined || 'Segundo valor');
+        console.log('' || 'Segundo valor');
+        console.log(0 || 'Segundo valor');
+        console.log('***********');
+        
+        /* Cortocircuito AND: cuando el valor de la izquierda en la expresion siempre pueda validar a 'false', es el valor que se cargara por defecto */
+        console.log(false && 'Segundo valor');
+        console.log(undefined && 'Segundo valor');
+        console.log('' && 'Segundo valor');
+        console.log(0 && 'Segundo valor');
+    </script>
+</body>
+</html>

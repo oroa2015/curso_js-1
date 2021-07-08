@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+</head>
+<body>
+    <h1>Pagina de Prueba</h1>
+    <script>
+        // con 'var' se declaran variables globales 
+        var saludo = "Hola internet";
+        console.log(saludo);
+
+        // con 'let' se declaran variables de bloque
+        let greeting = "Hello internet";
+        console.log(greeting);
+
+        console.log('*********** var ***********');
+        var musica = 'Rock';
+        console.log("Variable musica antes del bloque:", musica);
+        {
+            var musica = 'Pop';
+            console.log("Variable musica dentro del bloque:", musica);
+        }
+        console.log("Variable musica despues del bloque:", musica);
+
+        console.log('*********** let ***********');
+        let musica2 = 'Rock';
+        console.log("Variable musica antes del bloque:", musica2);
+        {
+            let musica2 = 'Pop';
+            console.log("Variable musica dentro del bloque:", musica2);
+        }
+        console.log("Variable musica despues del bloque:", musica2);
+
+        console.log('*********** variables/constantes ***********');
+        let a;
+        const PI = 3.1416;
+        a = "Valor de la variable";
+        console.log(a);
+
+        let objeto = {
+            nombre: "Omar",
+            edad: 40
+        }
+
+        let colores = ["blanco", "negro", "azul"];
+
+        console.log(objeto);
+        console.log(colores);
+
+        objeto.email = "omar-email@mail.com";
+        colores.push("verde");
+
+        console.log('*********** Cadenas/Strings ***********');
+        let nombre = "Stephen";
+        let apellido = 'Strange';
+        let nombre_heroe = new String("Doctor Strange");
+        let lorem = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, et dolorum. Adipisci sequi, voluptates accusamus earum magnam non pariatur odit consequuntur dicta modi. Quam soluta aliquid nam ea quod dolore.";
+        console.log(nombre, nombre.length, nombre.toUpperCase());
+        console.log(apellido, apellido.length, apellido.toLowerCase());
+        console.log(nombre_heroe, nombre_heroe.length);
+        console.log(lorem.includes("amet"), lorem.trim(), lorem.split(" "));
+
+    </script>
+</body>
+</html>

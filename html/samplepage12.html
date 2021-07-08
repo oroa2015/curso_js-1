@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 12</title>
+</head>
+<body>
+    <h1>Test Page 12: Destructuracion</h1>
+    <script>
+        /*
+         Destructuracion
+        -----------------
+        */
+
+        // Sin destructuracion
+        const numerosVarios = [1, 2, 3];
+        let uno = numerosVarios[0],
+        dos = numerosVarios[1],
+        tres = numerosVarios[2];
+        console.log(uno, dos, tres);
+        
+        // Con destructuracion
+        const easyNumbers = [1, 2, 3];
+        const [val1, val2, val3] = easyNumbers;
+        console.log(val1, val2, val3);
+
+        const heroe = {
+            nombre: "Cliff",
+            apellido: "Barton",
+            alias: "Hawkeye",
+            afiliacion: "Avengers"
+        }
+        let {nombre, apellido, alias, afiliacion} = heroe;
+        console.log(apellido, alias);
+    </script>
+</body>
+</html>

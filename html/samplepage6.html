@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 6</title>
+</head>
+<body>
+    <h1>Test Page 6</h1>
+    <script>
+        /* Objetos */
+        
+        // Se pueden crear objetos instanciando al constructor
+        const objetoA = new Object();
+        console.log(objetoA);
+
+        // Es mas comun crear un objeto de esta manera
+        const usuarioHeroe = {
+            nombre: "Natasha",
+            apellido: "Romanov",
+            alias: "Black Widow",
+            casado: false,
+            contacto: {
+                email: "bwidow@avenger.com",
+                telefono: 12345678,
+                telegram: "@BlackWidow"
+            },
+            saludo: function() {
+                console.log("Hola, soy una Avenger")
+            },
+            pasatiempos: ["Manipulacion", "Engano", "Lucha Frontal", "Tactica"],
+            pronunciaNombreCompleto: function() {
+                console.log(`Mi nombre completo es ${this.nombre} ${this.apellido}`)
+            }
+        };
+        console.log(usuarioHeroe);
+
+        // Se puede acceder a los atributos de un objeto asi:
+        console.log(usuarioHeroe["contacto"]);
+
+        // Tambien asi:
+        console.log(usuarioHeroe.apellido);
+
+        // Para usar un metodo o funcion se escribe:
+        console.log(usuarioHeroe.saludo());
+
+        // Mostrar el arreglo
+        console.log(usuarioHeroe.pasatiempos);
+        console.log(usuarioHeroe.pasatiempos[2]);
+        
+        // Mostrar el objeto dentro del objeto
+        console.log(usuarioHeroe.contacto);
+        console.log(usuarioHeroe.contacto.telegram);
+
+        // Invocar la funcion dentro del objeto
+        usuarioHeroe.saludo();
+        usuarioHeroe.pronunciaNombreCompleto();
+
+        console.log(Object.keys(usuarioHeroe));
+        console.log(Object.values(usuarioHeroe));
+        console.log(usuarioHeroe.hasOwnProperty("nombre"));
+    </script>
+</body>
+</html>

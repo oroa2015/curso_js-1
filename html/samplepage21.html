@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 21</title>
+</head>
+<body>
+    <h1>Test Page 21: Objeto Date</h1>
+    <script>
+        /*
+         Objeto Date
+        
+        */
+        console.log(Date());
+        let fecha = new Date();
+        console.log(fecha);
+
+        console.log(`Dia (fecha): ${fecha.getDate()}`);
+
+        // Dia de la semana Dom Lun Mar Mie Jue Vie Sab: 0 1 2 3 4 5 6
+        console.log(`Dia: ${fecha.getDay()}`);
+
+        // Obtener mes: Ene Feb Mar Abr ... : 0 1 2 3...
+        console.log(`Mes: ${fecha.getMonth()}`);
+
+        // Obtener anio
+        console.log(`Anio: ${fecha.getFullYear()}`);
+
+        // Obtener hora
+        console.log(`Hora: ${fecha.getHours()}`);
+        
+        // Obtener minutos
+        console.log(`Minutos: ${fecha.getMinutes()}`);
+        
+        // Obtener segundos
+        console.log(`Segundos: ${fecha.getSeconds()}`);
+
+        console.log(`Fecha Entendible Completa: ${fecha.toString()}`);
+
+        console.log(`Fecha Entendible Simple: ${fecha.toDateString()}`);
+
+        console.log(`Fecha Entendible Simple en hora local: ${fecha.toLocaleString()}`);
+        console.log(fecha.toLocaleDateString());
+
+        console.log(`Hora GMT: ${fecha.getTimezoneOffset()}`);
+
+        console.log(fecha.getUTCDay());
+        console.log(fecha.getUTCHours());
+
+        // Representar segundos en formato timestamp
+        console.log(Date.now());
+
+        // Obtener fecha de nacimiento
+        let fechaNacimiento = new Date(1979, 8, 1);
+        console.log(fechaNacimiento);
+    </script>
+</body>
+</html>

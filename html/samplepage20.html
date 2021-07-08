@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 20</title>
+</head>
+<body>
+    <h1>Test Page 20: Objeto Console</h1>
+    <script>
+        /*
+         Objeto Console
+        
+        */
+        console.log(console);
+
+        console.error('Mensaje de error...');
+
+        console.warn('Mensaje de advertencia...');
+
+        console.info('Mensaje informativo...');
+
+        let nombre = 'Steve', apellido = 'Rogers', edad = 70;
+
+        console.error(nombre);
+        console.warn(apellido);
+        console.info(edad);
+
+        console.log(`Soy ${nombre} ${apellido} y tengo ${edad} anios.`);
+
+        console.log(`Soy %s %s y tengo %d anios.`, nombre, apellido, edad);
+
+        console.log(window);
+        console.log(document);
+        console.dir(Object.toString);
+
+        // Agrupacion de logs
+        console.groupCollapsed('Vitaminas escenciales para el cuerpo:');
+        console.log('Vitamina A');
+        console.log('Vitamina C');
+        console.log('Vitamina D');
+        console.log('Vitamina E');
+        console.log('Vitamina K');
+        console.log('Vitamina B1');
+        console.log('Vitamina B2');
+        console.log('Vitamina B3');
+        console.log('Acido pantotenico');
+        console.log('Biotina');
+        console.log('Vitamina B6');
+        console.log('Vitamina B9');
+        console.log('Vitamina B12');
+        console.log('Acido Folico');
+        console.groupEnd();
+
+        // Representacion tabular ordenados
+        console.table(Object.entries(console).sort());
+
+        const numeros = [1, 2, 3, 4, 5], vocales = ['a', 'e', 'i', 'o', 'u'];
+        console.log(numeros, vocales);
+        console.table(numeros);
+        console.table(vocales);
+
+        // Representacion tabular de un objeto
+        const usuario = {
+            nombre: 'John',
+            apellido: 'Doe',
+            edad: 30,
+            status: 'single'
+        }
+        console.table(usuario);
+
+        // Calculo de tiempo
+        console.time('Tiempo de ejecucion del codigo');
+        const valores = Array(1000000);
+        for (let i = 0; i < valores.length; i++) {
+            valores[i] = i;
+        }
+        console.timeEnd('Tiempo de ejecucion del codigo');
+        
+        // Contar dinamicamente
+        for (let i = 0; i <= 10; i++) {
+            console.count('Ciclo for');
+            console.log(i);
+        }
+
+        // Con assert se pueden hacer pruebas de codigo
+        let varX = 3, varY = 2, pruebaXY = "X debe ser < Y";
+        console.assert(varX < varY, {varX, varY, pruebaXY});
+
+    </script>
+</body>
+</html>

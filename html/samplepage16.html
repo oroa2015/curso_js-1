@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 16</title>
+</head>
+<body>
+    <h1>Test Page 16: Prototipos</h1>
+    <script>
+        /*
+         Prototipos
+        -----------------
+        
+        POO incluye:
+        Clases: son los modelos a seguir
+        Objetos: son las instancias de las clases
+          Atributos: son caracteristicas o propiedades (las variables).
+          Metodos: son las acciones que un objeto puede realizar (las funciones).
+        
+        Los Prototipos son un mecanismo por el que un objeto puede heredar atributos y metodos desde otro objeto padre.
+        */
+        
+        // Objeto Literal
+        const objetoAnimal = {
+            nombre: "Snoopy",
+            sonar() {
+                console.log("Hago sonidos de perro vivo");
+            }
+        }
+        objetoAnimal.sonar();
+
+        // Funcion constructora v1 con los metodos dentro del constructor
+        function Animal(nombre, genero) {
+            // Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+            
+            // Metodos
+            this.sonar = function() {
+                console.log("Hago sonidos de animal vivo");
+            }
+            this.saludar = function() {
+                console.log(`Hola, me llamo ${this.nombre}`);
+            }
+        }
+        const snoopy = new Animal("Snoopy", "Macho"), lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+        snoopy.sonar();
+        snoopy.saludar();
+        
+        console.log(objetoAnimal);
+        console.log(snoopy);
+
+        console.log("**************");
+        // Funcion constructora v2 con los metodos dentro del prototipo
+        function AnimalMamifero(nombre, genero, peso) {
+            // Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+            this.peso = peso;
+        }
+        // Metodos agregados a la funcion constructora
+        AnimalMamifero.prototype.saludar = function() {
+            console.log(`Hola, me llamo ${this.nombre}`);
+        }
+        const snoopy2 = new AnimalMamifero("Snoopy", "Macho"), lolaBunny2 = new AnimalMamifero("Lola Bunny", "Hembra");
+
+        snoopy2.saludar();
+        
+        console.log(snoopy2);
+        console.log(lolaBunny2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 17</title>
+</head>
+<body>
+    <h1>Test Page 17: Herencia Prototipica</h1>
+    <script>
+        /*
+         Herencia Prototipica
+        
+        */
+        
+        // Funcion constructora
+        function Animal(nombre, genero) {
+            // Atributos
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+        Animal.prototype.sonar = function() {
+            console.log("Hago sonidos de animal vivo");
+        }
+        Animal.prototype.saludar = function() {
+            console.log(`Hola, me llamo ${this.nombre}`);
+        }
+
+        // Herencia Prototipica
+        function Perro(nombre, genero, tamanio) {
+            this.super = Animal;
+            this.super(nombre, genero);
+            this.tamanio = tamanio;
+        }
+
+        // Aqui es donde la clase Perro hereda de Animal
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        // Sobreescritura de metodos Padre en Hijo
+        Perro.prototype.sonar = function() {
+            console.log("Soy un perro y puedo ladrar.");
+        }
+
+        Perro.prototype.ladrar = function() {
+            console.log("Guau, guau!!");
+        }
+
+        const snoopy = new Perro("Snoopy", "Macho", "Mediano");
+
+        snoopy.sonar();
+        snoopy.saludar();
+        snoopy.ladrar();
+
+        console.log(snoopy);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 19</title>
+</head>
+<body>
+    <h1>Test Page 19: M&eacute;todos Est&aacute;ticos getters - setters</h1>
+    <script>
+        /*
+         Metodos Estaticos getters - setters
+        
+        */
+        class Animal {
+            /*
+            El constructor de una clase es un metodo especial que se ejecuta en el momento de instanciar la clase
+            */
+            constructor(nombre, genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            // Metodos
+            sonar() {
+                console.log("Hago sonidos porque estoy vivo");
+            }
+
+            saludar() {
+                console.log(`Hola, me llamo ${this.nombre}`);
+            }
+        }
+
+        class Perro extends Animal {
+            constructor(nombre, genero, tamanio) {
+                // El metodo super() manda llamar el constructor de la clase Padre
+                super(nombre, genero); // Aqui solamente se le pasan los parametros del padre
+                this.tamanio = tamanio;
+                this.raza = null;
+            }
+
+            sonar() {
+                console.log("Soy un perro y puedo ladrar.");
+            }
+            ladrar() {
+                console.log("Guauu, guauu!!..");
+            }
+
+            // Un metodo estatico se puede ejecutar sin necesidad de instanciar la clase
+            static queEres() {
+                console.log('Los perros son los mejores amigos del hombre.');
+            }
+
+            // Los metodos getters y setters son metodos especiales que permiten establecer y obtener los valores de los atributos de una clase
+            get getRaza() {
+                return this.raza;
+            }
+
+            set setRaza(raza) {
+                this.raza = raza;
+            }
+        }
+
+        Perro.queEres(); // se pueden usar los metodos estaticos sin necesidad de instanciar la clase
+
+        const scooby = new Perro('Scooby', 'Macho', 'Gigante');
+        
+        scooby.setRaza = 'Gran Danes';
+        console.log(`La raza de perro de Scooby es ${scooby.getRaza}`);
+
+        
+    </script>
+</body>
+</html>

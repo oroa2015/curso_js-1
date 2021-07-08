@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/javascript.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 26</title>
+</head>
+<body>
+    <h1>Test Page 26: Funciones Anonimas Autoejecutables</h1>
+    <script>
+        /*
+         Funciones Anonimas Autoejecutables
+        
+        */
+        (function() {
+            console.log('Primera FAA...');
+        })(); // El segundo par de parentesis es el que ejecuta la funcion
+        
+        (function(d, w, c) {
+            console.log('Second IIFE function...');
+            console.log(d);
+            console.log(w);
+            console.log(c);
+
+            c.log('Un mensaje en la consola...');
+        })(document, window, console);
+
+
+        /* Formas de escribir FAA */
+
+        // Clasica
+        (function() {
+            console.log('Version Clasica...');
+        })();
+
+        // Crockford (autor del libro 'Javascript: The Good Parts')
+        ((function(){
+            console.log('Version Crockford...')
+        })());
+
+        // Unaria
+        +(function(){
+            console.log('Version Unaria...')
+        })();
+
+        // Facebook
+        !(function(){
+            console.log('Version Facebook...')
+        })();
+
+    </script>
+</body>
+</html>

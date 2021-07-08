@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 9</title>
+</head>
+<body>
+    <h1>Test Page 9: Ciclos</h1>
+    <script>
+        /* Ciclos */
+        let contador = 0;
+        while(contador < 10) {
+            console.log(`Conteo while: ${contador}`);
+            contador++;
+        }
+        
+        contador = 0;
+        do {
+            contador++;
+            console.log(`Conteo do-while: ${contador}`);
+        } while(contador < 10)
+
+
+        // Este ciclo for es especial para recorrer arreglos
+        let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+        for (let ind = 0; ind < numeros.length; ind++) {
+            console.log(`Conteo for: ${ind}, arreglo: ${numeros[ind]}`);
+        }
+
+        // El cliclo for-in permite iterar las PROPIEDADES de un objeto
+        const perfilEstudiante = {
+            nombre: "James",
+            apellido: "Rhodes",
+            alias: "War Machine",
+            afiliacion: "Avengers"
+        }
+        for (const prop in perfilEstudiante) {
+            console.log(`${prop}: ${perfilEstudiante[prop]}`);
+        }
+
+        // El ciclo for-of permite iterar cualquier objeto que sea iterable
+        const iluminatis = ["Iron Man", "Dr Strange", "Black Panther", "Mr Fantastic", "Namor", "Captain America", "Beast", "Black Bolt"];
+        for (const elem of iluminatis) {
+            console.log(elem);
+        }
+    </script>
+</body>
+</html>

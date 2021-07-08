@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 14</title>
+</head>
+<body>
+    <h1>Test Page 14: Parametros REST</h1>
+    <script>
+        /*
+         Parametros REST
+        -----------------
+        */
+        function suamarValor(a, b, ...c) {
+            let resultado = a + b;
+
+            c.forEach(function(n) { resultado += n; })
+            
+            return resultado;
+        }
+        console.log(suamarValor(1, 2));
+        console.log(suamarValor(1, 2, 3));
+        console.log(suamarValor(1, 2, 3, 4));
+        console.log(suamarValor(1, 2, 3, 4, 5));
+
+        // Operador de propagacion (spread operator)
+        const arreglo1 = [1,2,3,4,5],
+        arreglo2 = [6,7,8,9,0];
+        
+        const arreglo3 = [...arreglo1, ...arreglo2];
+        console.log(arreglo3);
+    </script>
+</body>
+</html>

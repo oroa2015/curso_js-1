@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 5</title>
+</head>
+<body>
+    <h1>Test Page 5</h1>
+    <script>
+        /* Arreglos */
+        const arreglo = [3,true,"Saludo",['A', 'B', 'C']];
+        console.log(arreglo);
+        let cantidad = arreglo.length;
+        console.log(`El arreglo tiene ${cantidad} elementos`);
+
+        console.log(arreglo[3][2]);
+
+        // Otra forma de crear un arreglo
+        const arregloBeta = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(arregloBeta);
+
+        // Para crear un arreglo de forma automatica
+        const arregloGamma = Array(7).fill(0);
+        console.log(arregloGamma);
+
+        // El metodo push() permite agregar nuevo elemento al final de un arreglo
+        const arregloDelta = [];
+        arregloDelta.push("Verbo", 13, true);
+        arregloDelta.push(3.1416, "Verde", 25);
+        console.log(arregloDelta);
+
+        // El metodo pop() permite eliminar elementos de un arreglo comenzando desde la ultima posicion
+        arregloDelta.pop();
+        console.log(arregloDelta);
+
+        const colores = ["Rojo", "Verde", "Azul"];
+        colores.forEach(function (elem, index) {
+            console.log(`<li id="${index}">${elem}</li>`)
+        });
+    </script>
+</body>
+</html>

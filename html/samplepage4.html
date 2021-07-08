@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 4</title>
+</head>
+<body>
+    <h1>Test Page 4</h1>
+    <script>
+        /* Funciones */
+
+        // Funciones Declaradas
+        function saludar(nombre="Desconocido", edad=0) {
+            console.log(`Hola, mi nombre es ${nombre}, y tengo ${edad} anios de edad.`);
+        }
+
+        saludar("Steve Rogers", 80);
+        saludar();
+
+
+        // Funciones Expresadas
+
+        // Funcion anonima
+        const funcionExpresada = function () {
+            console.log("Esta es una funcion expresada. Es una funcion asignada a una constante.");
+        }
+        // Las funciones expresadas se deben inicializar primero antes de invocarlas.
+        funcionExpresada();
+    </script>
+</body>
+</html>

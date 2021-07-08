@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page 13</title>
+</head>
+<body>
+    <h1>Test Page 13: Objetos Literales</h1>
+    <script>
+        /*
+         Objetos Literales
+        -----------------
+        */
+
+        // Sin las nuevas caracteristicas de Objetos Literales
+        let nombrePerro = "Krypto", edad = 7;
+
+        const perro = {
+            nombre: nombrePerro,
+            edad: edad,
+            ladrar: function() {
+                console.log("gooff, gooff!!")
+            }
+        }
+        console.log(perro);
+        perro.ladrar();
+
+        // Con las nuevas caracteristicas de Objetos Literales
+        const dogObj = {
+            nombrePerro,
+            edad,
+            raza: "Callejero",
+            ladrar() {
+                console.log("gooff, gooff, gooff!!")
+            }
+        }
+        console.log(dogObj);
+        dogObj.ladrar();
+    </script>
+</body>
+</html>
