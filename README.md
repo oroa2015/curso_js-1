@@ -5,11 +5,11 @@ _Archivos y ejercicios de programacion correspondientes al curso JavaScript de j
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) - Con el estandar ES6.
 * CSS3.
 * [HTML5](https://www.w3.org/TR/html5/) - Lenguaje para marcado de hipertexto.
+
+La mayoria de los ejercicios estan en los archivos .js
 
 ## Autor ✒️
 
