@@ -1,5 +1,5 @@
 
-// Solucion de ejercicio 1
+/* Seccion 1 */
 let btn1 = () => {
     try {
         let cadenaCarac = prompt("Ingrese texto:");
@@ -11,7 +11,6 @@ let btn1 = () => {
     }
 }
 
-// Solucion de ejercicio 2
 let btn2 = () => {
     try {
         let texto = prompt("Ingrese el texto: ");
@@ -23,7 +22,6 @@ let btn2 = () => {
     }
 }
 
-// Solucion de ejercicio 3
 let btn3 = () => {
     try {
         let texto1 = prompt("Ingrese el texto a dividir: ");
@@ -35,7 +33,6 @@ let btn3 = () => {
     }
 }
 
-// Solucion de ejercicio 4
 let btn4 = () => {
     try {
         let textoPpal = prompt("Ingrese el texto: ");
@@ -50,7 +47,7 @@ let btn4 = () => {
     }
 }
 
-// Solucion de ejercicio 5
+/* Seccion 2 */
 let btn5 = () => {
     let textoOriginal = prompt("Ingrese texto:");
     if(textoOriginal === '') {
@@ -70,7 +67,6 @@ let btn5 = () => {
     }
 }
 
-// Solucion de ejercicio 6
 let btn6 = () => {
     let txtInicial = prompt('Ingrese el texto:');
     let palabraConteo = prompt('Ingrese la palabra a contar:');
@@ -100,7 +96,6 @@ let btn6 = () => {
     }
 }
 
-// Solucion de ejercicio 7
 let btn7 = () => {
     function invierteTexto(texto) {
         const arregloTextual = [...texto];
@@ -130,7 +125,6 @@ let btn7 = () => {
     }
 }
 
-// Solucion de ejercicio 8
 let btn8 = () => {
     let texto1 = prompt("Ingrese el texto: ");
     let patron = prompt("Indique el patron a eliminar: ");
@@ -144,14 +138,13 @@ let btn8 = () => {
     
 }
 
-// Solucion de ejercicio 9
+/* Seccion 3 */
 let btn9 = () => {
     // console.log((Math.random(501, 600) * 1000).toFixed(0));
     // console.log(((Math.random() * (601 - 501)) * 10).toFixed(0));
     console.log(Math.floor(Math.random() * (600 - 501)) + 501);
 }
 
-// Solucion de ejercicio 10
 let btn10 = () => {
     let numOriginal = prompt("Ingrese un numero:");
     let numCapicua = numOriginal.split("").reverse().join("");
@@ -162,7 +155,6 @@ let btn10 = () => {
     }
 }
 
-// Solucion de ejercicio 11
 let btn11 = () => {
     let numeroInicial = parseInt(prompt("Calcular numero Factorial de:"));
     let numeroFactorial = 1;
@@ -181,11 +173,88 @@ let btn11 = () => {
     }
 }
 
-// Solucion de ejercicio 12
-let btn12 = () => {}
+/* Seccion 4 */
+let btn12 = () => {
+    let numeroUsuario = parseInt(prompt("Ingrese un numero:"));
+    let divisor = 2;
 
-// Solucion de ejercicio 13
-let btn13 = () => {}
+    if(!numeroUsuario) {
+        console.warn('Opcion invalida..');
+    } else if(isNaN(numeroUsuario)) {
+        console.warn('Debe ingresar un numero..');
+    } else {
+        while (numeroUsuario !== divisor) {
+            if(numeroUsuario % divisor === 0) {
+                console.log(`El numero ${numeroUsuario} no es primo`);
+                break;
+            } else {
+                divisor++;
+                if(divisor === numeroUsuario) {
+                    console.log(`El numero ${numeroUsuario} si es primo`);
+                    break;
+                }
+            }
+        }
+    }
+}
 
-// Solucion de ejercicio 14
-let btn14 = () => {}
+let btn13 = () => {
+    let numeroEvaluado = parseInt(prompt("Ingrese un numero:"));
+    (numeroEvaluado % 2 === 0) ? console.log(`El numero ${numeroEvaluado} es par..`) : console.log(`El numero ${numeroEvaluado} es impar..`)
+}
+
+let btn14 = () => {
+    let gradosCelsius, gradosFahrenheit = 0;
+    let temperatura = confirm("Convertir Celsius a Fahrenheit?");
+    if(temperatura) {
+        gradosCelsius = parseFloat(prompt("Ingrese un valor Celsius:"));
+        gradosFahrenheit = (gradosCelsius * 1.8) + 32;
+        console.log(`${gradosCelsius}°C son ${gradosFahrenheit}°F`)
+    } else {
+        gradosFahrenheit = parseFloat(prompt("Ingrese un valor Fahrenheit:"));
+        gradosCelsius = (gradosFahrenheit / 1.8) - 32;
+        console.log(`${gradosFahrenheit}°F son ${gradosCelsius.toFixed(1)}°C`);
+    }
+}
+
+/* Seccion 5 */
+let btn15 = () => {}
+
+let btn16 = () => {}
+
+let btn17 = () => {}
+
+/* Seccion 6 */
+let btn18 = () => {}
+
+let btn19 = () => {}
+
+let btn20 = () => {}
+
+/* Seccion 7 */
+let btn21 = () => {}
+
+let btn22 = () => {}
+
+let btn23 = () => {}
+
+/* Seccion 8 */
+let btn24 = () => {}
+
+let btn25 = () => {}
+
+let btn26 = () => {}
+
+/* Seccion 9 */
+let btn27 = () => {}
+
+let btn28 = () => {}
+
+let btn29 = () => {}
+
+/* Seccion 10 */
+let btn30 = () => {}
+
+let btn31 = () => {}
+
+let btn32 = () => {}
