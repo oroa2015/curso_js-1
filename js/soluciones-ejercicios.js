@@ -209,10 +209,10 @@ let btn14 = () => {
     if(temperatura) {
         gradosCelsius = parseFloat(prompt("Ingrese un valor Celsius:"));
         gradosFahrenheit = (gradosCelsius * 1.8) + 32;
-        console.log(`${gradosCelsius}°C son ${gradosFahrenheit}°F`)
+        console.log(`${gradosCelsius}°C son ${gradosFahrenheit.toFixed(1)}°F`)
     } else {
         gradosFahrenheit = parseFloat(prompt("Ingrese un valor Fahrenheit:"));
-        gradosCelsius = (gradosFahrenheit / 1.8) - 32;
+        gradosCelsius = (gradosFahrenheit - 32) / 1.8;
         console.log(`${gradosFahrenheit}°F son ${gradosCelsius.toFixed(1)}°C`);
     }
 }
