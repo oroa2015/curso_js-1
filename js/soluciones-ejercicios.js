@@ -218,11 +218,99 @@ let btn14 = () => {
 }
 
 /* Seccion 5 */
-let btn15 = () => {}
+let btn15 = () => {
+    const binarioDecimal = (numero) => {
+        let numeroEnArrayBinario = numero.split(''), acumuladorDecimal = 0;
 
-let btn16 = () => {}
+        for (let i = 0; i < numeroEnArrayBinario.length; i++) numeroEnArrayBinario[i] = +numeroEnArrayBinario[i];
 
-let btn17 = () => {}
+        numeroEnArrayBinario.reverse();
+
+        for (let i = 0; i < numeroEnArrayBinario.length; i++) acumuladorDecimal += numeroEnArrayBinario[i] * (2 ** i);
+
+        console.log(`Resultado: ${numero}(2) = ${acumuladorDecimal}(10)`);
+    }
+    
+    const decimalBinario = (numero) => {
+        let divisionEntera = parseInt(numero);
+        let acumuladorDivision = 0, condicion = true, arrayResiduo = [];
+
+        do {
+            if(Math.round((divisionEntera / 2)) === 0) {
+                condicion = false;
+                break;
+            } else {
+                arrayResiduo.push(divisionEntera.toFixed(0) % 2);
+                divisionEntera = Math.floor(divisionEntera / 2);
+            }
+        } while (condicion);
+
+        acumuladorDivision = parseInt(arrayResiduo.reverse().join(''));
+        console.log(`Resultado: ${numero}(10) = ${acumuladorDivision}(2)`);
+    }
+
+    let opcionUsuario = confirm("¿Desea convertir numero entero a binario?");
+    if(opcionUsuario === true) {
+        let numeroOrigen = prompt("Ingrese un numero entero:");
+        (!numeroOrigen) ? console.warn('Opcion incorrecta..') : (isNaN(numeroOrigen)) ? console.warn('Debe ingresar valores numericos..') : decimalBinario(numeroOrigen);
+        /*
+            Tambien se puede hacer ejecutando:
+            return console.info(`${numeroOrigen}(10) = ${numeroOrigen.toString(2)}(2)`);
+        */
+    } else {
+        let numeroOrigen = prompt("Ingrese un numero binario:");
+        (!numeroOrigen) ? console.warn('Opcion incorrecta..') : binarioDecimal(numeroOrigen);
+        /*
+            Tambien se puede hacer ejecutando:
+            return console.info(`${numeroOrigen}(2) = ${parseInt(numeroOrigen, 2)}(10)`);
+        */
+    }
+}
+
+let btn16 = () => {
+    let montoInicial = parseFloat(prompt('Ingrese el monto:')).toFixed(2);
+    let descuento = parseInt(prompt('Ingrese el descuento:'));
+    let montoDescuento, montoFinal = 0;
+    descuento /= 100;
+
+    if(isNaN(montoInicial) || isNaN(descuento) || !montoInicial || !descuento ) {
+        console.warn('Ingrese valores numericos para realizar el calculo.');
+    } else if(montoInicial < 0 || descuento < 0) {
+        console.warn('Ingrese numeros mayores a cero para realizar el calculo.');
+    } else {
+        montoFinal = montoInicial - (montoInicial * descuento);
+        console.log(`Monto inicial: $${montoInicial}, descuento: ${descuento * 100}%, Monto final: $${montoFinal.toFixed(2)}`);
+    }
+}
+
+let btn17 = () => {
+    let fechaInicial = prompt('Ingrese fecha (aaaa/mm/dd):');
+
+    if(fechaInicial === undefined) {
+        console.warn('No ingreso una fecha.');
+    } else if(!fechaInicial instanceof Date) {
+        console.warn('No es una fecha valida.');
+    } else if(!fechaInicial) {
+        console.warn('No ingreso una fecha valida..');
+    } else {
+        let anioUsuario = fechaInicial.split(',');
+
+        let fechaConsulta = new Date(fechaInicial);
+        
+        let aniosEnMS = 1000 * 3600 * 24 * 365;
+        
+        let diferenciaFechas = new Date().getTime() - fechaConsulta.getTime();
+        
+        let calculoFecha = Math.floor(diferenciaFechas / aniosEnMS);
+
+        return (Math.sign(calculoFecha) === -1)
+        ? console.info(`Faltan ${Math.abs(calculoFecha)} años para el ${anioUsuario[0]}`)
+        : (Math.sign(calculoFecha) === 1)
+        ? console.info(`Han pasado ${Math.abs(calculoFecha)} años, desde el ${anioUsuario[0]}`)
+        : console.info(`Estamos en el año actual: ${anioUsuario[0]}`);
+        
+    }
+}
 
 /* Seccion 6 */
 let btn18 = () => {}
@@ -258,3 +346,4 @@ let btn30 = () => {}
 let btn31 = () => {}
 
 let btn32 = () => {}
+
