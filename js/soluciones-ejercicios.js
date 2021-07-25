@@ -313,11 +313,56 @@ let btn17 = () => {
 }
 
 /* Seccion 6 */
-let btn18 = () => {}
+let btn18 = () => {
+    let textoUsuario = prompt('Ingrese texto:');
+    if(textoUsuario !== null) {
+        let arrayDeTexto = textoUsuario.split('');
+        const regExpVoca = /[aeiouáéíóú]/ig;
+        const regExpCons = /[bcdfghjklmnñpqrstvwxyz]/ig;
+        let arrayMatchVoca = textoUsuario.match(regExpVoca);
+        let arrayMatchCons = textoUsuario.match(regExpCons);
+    
+        if(!textoUsuario || textoUsuario === undefined) {
+            console.warn('Texto invalido.');
+        } else if(!isNaN(textoUsuario)) {
+            console.warn('Debe ingresar solo texto.');
+        } else {
+    
+            arrayMatchVoca = arrayMatchVoca.join();
+            arrayMatchVoca = arrayMatchVoca.replace(/,/g, "");
 
-let btn19 = () => {}
+            arrayMatchCons = arrayMatchCons.join();
+            arrayMatchCons = arrayMatchCons.replace(/,/g, "");
 
-let btn20 = () => {}
+            console.log(`Texto: ${textoUsuario}`);
+            console.log(`Vocales: ${arrayMatchVoca.length}, Consonantes: ${arrayMatchCons.length}.`);
+        }
+    }
+}
+
+let btn19 = () => {
+    let nombreUsuario = prompt('Ingrese un nombre:');
+    if(nombreUsuario !== null) {
+        let regExpNombre = /^[a-zA-Záéíóúñ\s]+$/ig;
+        
+        (nombreUsuario === ' ' || nombreUsuario === undefined || regExpNombre.test(nombreUsuario))
+        ? console.info('Nombre valido! 👍') :  console.warn('Nombre invalido 👎');
+    }
+}
+
+let btn20 = () => {
+    let emailUsuario = prompt('Ingrese email:');
+    let regExpEmail = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
+    if(!emailUsuario || emailUsuario === undefined) {
+        console.warn('Email invalido.');
+    } else if(!isNaN(emailUsuario)) {
+        console.warn('Debe ingresar solo texto para el email.');
+    } else {
+        (regExpEmail.test(emailUsuario))
+        ? console.info(`${emailUsuario} -> Email valido 📨`)
+        : console.warn(`${emailUsuario} -> Email invalido..`);
+    }
+}
 
 /* Seccion 7 */
 let btn21 = () => {}
@@ -346,4 +391,3 @@ let btn30 = () => {}
 let btn31 = () => {}
 
 let btn32 = () => {}
-
