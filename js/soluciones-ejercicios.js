@@ -365,11 +365,81 @@ let btn20 = () => {
 }
 
 /* Seccion 7 */
-let btn21 = () => {}
+let btn21 = () => {
+    let arrayOrigenTxt = prompt("Ingrese numeros separados por coma:");
+    let arrayOrigenNum = [], arrayCuadrado = [];
+    if(arrayOrigenTxt === null || arrayOrigenTxt === ' ' || !arrayOrigenTxt) {
+        console.warn('Valores invalidos..');
+    } else {
+        arrayOrigenTxt = arrayOrigenTxt.split(',');
 
-let btn22 = () => {}
+        for (let elem of arrayOrigenTxt) {
+            if(isNaN(elem)) {
+                console.warn('El valor no es numerico');
+                break;
+            }
+            arrayOrigenNum.push(+elem);
+        }
+        
+        for (let i = 0; i < arrayOrigenNum.length; i++) {
+            arrayCuadrado.push(arrayOrigenNum[i] ** 2);
+        }
+    
+        console.log(`Array original: ${arrayOrigenNum}; Array Cuadrado: ${arrayCuadrado}`);
+    }
+}
 
-let btn23 = () => {}
+let btn22 = () => {
+    let arrayNumerosTxt = prompt("Ingrese numeros separados por coma:");
+    let arrayNumeros = [];
+    if(arrayNumerosTxt === null || arrayNumerosTxt === ' ' || !arrayNumerosTxt) {
+        console.warn('Valores invalidos..');
+    } else {
+        arrayNumerosTxt = arrayNumerosTxt.split(',');
+        for (let elem of arrayNumerosTxt) {
+            if(isNaN(elem)) {
+                console.warn('El valor no es numerico');
+                break;
+            }
+            arrayNumeros.push(+elem);
+        }
+        let masAlto = 0, masBajo = 0;
+    
+        arrayNumeros.forEach((elem) => {
+            if(elem > masAlto) masAlto = elem
+    
+            if(elem < masBajo) masBajo = elem
+        });
+        
+        console.log(`Array Origen: ${arrayNumeros}; Numero mas alto: ${masAlto}; Numero mas bajo: ${masBajo}`);
+    }
+}
+
+let btn23 = () => {
+    let arrayInicioTxt = prompt("Ingrese numeros separados por coma:");
+    let arrayInicioNum = [];
+    if(arrayInicioTxt === null || arrayInicioTxt === ' ' || !arrayInicioTxt) {
+        console.warn('Valores invalidos..');
+    } else {
+        arrayInicioTxt = arrayInicioTxt.split(',');
+        for (let elem of arrayInicioTxt) {
+            if(isNaN(elem)) {
+                console.warn('El valor no es numerico');
+                break;
+            }
+            arrayInicioNum.push(+elem);
+        }
+
+        let pares = [], impares = [];
+        const resultado = { pares, impares };
+    
+        arrayInicioNum.forEach((elem) => {
+            (elem % 2 === 0) ? pares.push(elem) : impares.push(elem)
+        });
+        
+        console.log(resultado);
+    }
+}
 
 /* Seccion 8 */
 let btn24 = () => {}
