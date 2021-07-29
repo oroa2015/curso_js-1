@@ -385,7 +385,7 @@ let btn21 = () => {
             arrayCuadrado.push(arrayOrigenNum[i] ** 2);
         }
     
-        console.log(`Array original: ${arrayOrigenNum}; Array Cuadrado: ${arrayCuadrado}`);
+        console.log(`Array original: ${arrayOrigenNum}\nArray Cuadrado: ${arrayCuadrado}`);
     }
 }
 
@@ -411,7 +411,7 @@ let btn22 = () => {
             if(elem < masBajo) masBajo = elem
         });
         
-        console.log(`Array Origen: ${arrayNumeros}; Numero mas alto: ${masAlto}; Numero mas bajo: ${masBajo}`);
+        console.log(`Array Origen: ${arrayNumeros}\nNumero mas alto: ${masAlto}\nNumero mas bajo: ${masBajo}`);
     }
 }
 
@@ -442,11 +442,97 @@ let btn23 = () => {
 }
 
 /* Seccion 8 */
-let btn24 = () => {}
+let btn24 = () => {
+    let vectorNumeros = prompt("Ingrese numeros separados por coma:");
+    let vectorAscen = [], vectorDescen = [], resultado = {};
+    if(vectorNumeros.length === 0) {
+        console.warn('Array vacio..');
+    } else if(vectorNumeros === null || vectorNumeros === ' ' || !vectorNumeros) {
+        console.warn('Valores invalidos..');
+    } else {
+        vectorNumeros = vectorNumeros.split(',');
+        resultado = {
+            vectorNumeros,
+            vectorAscen: vectorNumeros.sort(), 
+            vectorDescen: vectorNumeros.reverse()
+        };
+        // console.log(`Vector inicial: ${vectorNumeros}\nOrdenado Ascendentemente: ${vectorNumeros.sort()}\nOrdenado Descendentemente: ${vectorNumeros.reverse()}`);
+        console.log(resultado);
+    }
+}
 
-let btn25 = () => {}
+let btn25 = () => {
+    let vectorOrigen = prompt("Ingrese numeros separados por coma:");
+    // let vectorOrigen = ['x',10,'x',2,'10',10,true,true];
+    let vectorCopia = [];
 
-let btn26 = () => {}
+    if(vectorOrigen.length === 0) {
+        console.warn('Array vacio..');
+    } else if(vectorOrigen.length === 1) {
+        console.warn('El arreglo debe tener al menos dos elementos..');
+    } else if(vectorOrigen === null || vectorOrigen === ' ' || !vectorOrigen) {
+        console.warn('Valores invalidos..');
+    } else {
+        vectorOrigen = vectorOrigen.split(','); // x,10,x,2,10,10,true,true
+        
+        console.log(`Origen: ${vectorOrigen}\nTipo Array: ${vectorOrigen instanceof Array}`);
+        
+        vectorOrigen.forEach((elem) => { if(!(vectorCopia.includes(elem))) vectorCopia.push(elem) });
+        
+        // console.log(`Origen: ${vectorOrigen}\nCopia: ${vectorCopia}\nTipo Array: ${vectorCopia instanceof Array}`);
+        console.info({
+            original: vectorOrigen,
+            filtrado: vectorCopia
+        });
+    }
+}
+
+let btn26 = () => {
+    /*  Version ES5  */
+    /* let arrayValores1 = prompt("Ingrese valores a promediar:");
+    let arrayValores2 = [], promedio = 0;
+    if(arrayValores1.length === 0) {
+        console.warn('Array vacio..');
+    } else if(arrayValores1.length === 1) {
+        console.warn('El arreglo debe tener al menos dos elementos..');
+    } else if(arrayValores1 === null || arrayValores1 === ' ' || !arrayValores1) {
+        console.warn('Valores invalidos..');
+    } else {
+        arrayValores1 = arrayValores1.split(',');
+        arrayValores1.forEach((elem) => { arrayValores2.push(+elem) });
+        arrayValores2.forEach((elem) => { promedio += elem });
+        console.log(`Valores: ${arrayValores2}\nPromedio: ${(promedio / arrayValores2.length).toFixed(1)}`);
+    } */
+
+    
+    /*  Version ES6+  */
+    let arrayValores1 = prompt("Ingrese valores a promediar:");
+    let arrayValores2 = [];
+    if(arrayValores1.length === 0) {
+        console.warn('Array vacio..');
+    } else if(arrayValores1.length === 1) {
+        console.warn('El arreglo debe tener al menos dos elementos..');
+    } else if(arrayValores1 === null || arrayValores1 === ' ' || !arrayValores1) {
+        console.warn('Valores invalidos..');
+    } else {
+        arrayValores1 = arrayValores1.split(',');
+        arrayValores1.forEach((elem) => { arrayValores2.push(+elem) });
+
+        for (let elem of arrayValores2) {
+            if(typeof elem !== "number") return console.warn(`El valor ${elem} no es un numero..`);
+        }
+        return console.info(
+            arrayValores2.reduce((total, num, index, arr) => {
+                total += num;
+                if(index === arr.length - 1) {
+                    return `El promedio de ${arr.join('+')} es ${total/arr.length}`;
+                } else {
+                    return total;
+                }
+            })
+        );
+    }
+}
 
 /* Seccion 9 */
 let btn27 = () => {}
